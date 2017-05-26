@@ -1,0 +1,36 @@
+#header {
+    background-image: url("../img/small-background.png");
+    background-size: 1498px 200px;
+    height: 200px;
+    width: 100%;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+}
+#results{
+    padding-top: 10px;
+}
+body{
+    background-image:url("../img/dark-grey-background.jpg");
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+#buttons{
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding-bottom: 25px;
+    padding-right: 25px;
+}
+.tooltip-inner{
+    min-width:350px;
+    font-size:14px;
+}
+.panel-body{
+    padding:5px;
+}
+.navbar{
+    border-radius:0px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" href="css/spinner.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/site.css">
+<title>NSC Photobook</title>
+</head>
+<body>
+<div class="navbar-fixed-top">
+<div class="jumbotron" id="header">
+    <div class="container">
+        <div class="text-center" style="color:white;"><h1>NSC Photobook</h2></div>
+    </div>
+</div>
+<div class="navbar navbar-inverse"  id="navbar-main" >
+        <div class="container-fluid">
+            <div class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <span style="color:white;font-size:20px;">Search: </span><input onkeyup="filter(this)" placeholder="Try #HSA for the Directorate or a person's name..." type="text" class="form-control" style="width:400px;"/>
+                 </diV>
+            </div>
+         </div>
+</div>
+</div>
+<div class="container-fluid" style="padding-top:260px;">
+   <div class="spinner" style="display:block;" id="loading">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+   </div>
+    <div class="row" id="results">
+    </div>
+</div>
+<div id="footer">
+</div>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+function filter(element){
+  var value = $(element).val().toLowerCase();
+  $("#results > div > div > div").each(function(){
+      if ($(this).text().toLowerCase().search(value) > -1){
+          $(this).parent().parent().show();
+      }else{
+          $(this).parent().parent().hide();
+      }
+  })
+};
+$("body").tooltip({ selector: '[data-toggle=tooltip]'});
+
+</script>
+</body>
+</html>
