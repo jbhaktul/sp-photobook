@@ -1,1 +1,0 @@
-{searchTerms} ProfileOrg=NSS ContentSource=People -PreferredName=sp-* -PreferredName:test -PreferredName:admin -PreferredName:portal -PreferredName:helpdesk -PreferredName:Ethics -PreferredName:PortalTest  Department<>PCS -PreferredName=Croft*
