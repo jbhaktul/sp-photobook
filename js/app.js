@@ -5,8 +5,7 @@
 
 var searchSourceID = '61a92dbd-2dfd-4191-815f-7c7536ee10b2';
 $.ajax({
-    //url: window.location.protocol + "//" + window.location.host + "/site/search/_api/search/query?querytext='ProfileORG:NSS'&sortlist='PreferredName:ascending'&sourceid='b09a7990-05ea-4af9-81ef-edfab16c4e31'&rowlimit='500'&selectproperties='PictureURL,PreferredName,WorkEmail,WorkPhone,Department,AccountName,MobilePhone'",
-    url: window.location.protocol + "//" + window.location.host + "/_api/search/query?sourceid='61a92dbd-2dfd-4191-815f-7c7536ee10b2'&rowlimit='500'&selectproperties='PictureURL,PreferredName,WorkEmail,WorkPhone,Department,AccountName,MobilePhone,JobTitle,AboutMe,LastName'",
+    url: window.location.protocol + "//" + window.location.host + "/_api/search/query?sourceid='" + searchSourceID + "'&rowlimit='500'&selectproperties='PictureURL,PreferredName,WorkEmail,WorkPhone,Department,AccountName,MobilePhone,JobTitle,AboutMe,LastName'",
     headers: { "Accept": "application/json; odata=verbose" },
     contentType: "application/json; odata=verbose",
     data:{
@@ -47,20 +46,21 @@ $.ajax({
                     if(userPic!= null){
                     var group = department.split(';');
                     department = group[0];
-                    //if(userPic!= null){
-                    //    Picurl = userPic;
-                    //}else{
-                    //    Picurl = '/_layouts/15/images/person.gif';
-                    //}
+                    //This is user's profile picture.
+                    if(userPic!= null){
+                        Picurl = userPic;
+                    }else{
+                        Picurl = '/_layouts/15/images/person.gif';
+                    }
                     Picurl = userPic;
                     Picurl = Picurl.replace("MThumb", "LThumb");
                     users[i] = [Picurl,fullname,workEmail,workPhone,department,accountname,groupline,title,portfolio,lastName];
                     allresults.push(users[i]);
-                    //allpeople.push(createGrid(users[i]));
                     }
                 }
 
                 }}
+                //This piece of code sorts alphabetical names.
                 allresults = allresults.sort(function(a,b){
                   var x = a[9];
                   var y = b[9];

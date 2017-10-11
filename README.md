@@ -6,7 +6,8 @@ The problem that I was trying to solve was to create a web based phone directory
 
 This code filters the users as you type something in the search bar:
 
-`function filter(element){
+```javascript
+function filter(element){
   var value = $(element).val().toLowerCase();
   $("#results > div > div > div").each(function(){
       if ($(this).text().toLowerCase().search(value) > -1){
@@ -16,6 +17,6 @@ This code filters the users as you type something in the search bar:
       }
   })
 };
-`
+```
 # Screenshot of the application:
 <br/>![Photobook Screeshot](https://github.com/jbhaktul/sp-photobook/blob/master/img/employee-directory.png)
